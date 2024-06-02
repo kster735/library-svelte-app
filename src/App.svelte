@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import "./app.scss";
+  import Navbar from "./lib/components/navigation/Navbar.svelte";
 
   onMount(async () => {
     // this is enough for most components
@@ -12,7 +13,7 @@
     // const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
   });
 </script>
-
+<Navbar />
 <div>Library</div>
 
 <style>
