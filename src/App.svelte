@@ -13,7 +13,7 @@
   });
 </script>
 
-<div>Home</div>
+<div>Library</div>
 
 <style>
 </style>
