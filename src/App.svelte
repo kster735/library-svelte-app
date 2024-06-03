@@ -2,6 +2,12 @@
   import { onMount } from "svelte";
   import "./app.scss";
   import Navbar from "./lib/components/navigation/Navbar.svelte";
+  
+  import Home from "./routes/Home.svelte";
+  import Features from "./routes/Features.svelte";
+  import Pricing from "./routes/Pricing.svelte";
+
+  import Router from "svelte-spa-router";
 
   onMount(async () => {
     // this is enough for most components
@@ -13,9 +19,21 @@
     // const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
   });
 
+  const routes = {
+    '/': Home,
+    '/features': Features,
+    '/pricing': Pricing,
+  }
 </script>
+<header>
+  <Navbar></Navbar>
+</header>
+<main class="min-vh-100">
+  <Router {routes}/>
+</main>
 
-<Navbar></Navbar>
-
+<footer class="bg-dark text-secondary p-5">
+  &copy; MIT Liscence 2024 iflexico
+</footer>
 <style>
 </style>
