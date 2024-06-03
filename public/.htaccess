@@ -1,4 +1,4 @@
-<IfModule mod_reqrite.c>
+<!-- <IfModule mod_reqrite.c>
     RewriteEngine On
     RewriteBase /
     RewriteRule ^index\.html$ - [L]
@@ -6,4 +6,16 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-l
     RewriteRule . /library/index.html - [L]
+</IfModule> -->
+
+<IfModule mod_reqrite.c>
+    Options -MultiViews
+    RewriteEngine On
+    RewriteBase /client_express_gql
+    RewriteRule ^index\.html$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-l
+    RewriteRule (.*)$ /client_express_gql/index.html - [QSA, L]
+    ErrorDocument 404 /client_express_gql/index.html
 </IfModule>
