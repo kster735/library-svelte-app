@@ -1,6 +1,4 @@
 <script>
-  import routes from "../.routify/routes.default.js";
-  import { Router, createRouter } from "@roxi/routify";
   import { onMount } from "svelte";
   import "./app.scss";
   import Navbar from "./lib/components/navigation/Navbar.svelte";
@@ -15,13 +13,9 @@
     // const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
   });
 
-  export const router = createRouter({
-    routes,
-  });
 </script>
 
 <Navbar></Navbar>
-<Router {router}></Router>
 
 <style>
 </style>

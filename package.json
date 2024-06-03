@@ -10,11 +10,11 @@
   },
   "devDependencies": {
     "@popperjs/core": "^2.11.8",
+    "@roxi/routify": "next",
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
     "bootstrap": "^5.3.3",
     "sass": "^1.77.2",
     "svelte": "^4.2.12",
-    "vite": "^5.2.0",
-    "@roxi/routify": "next"
+    "vite": "^5.2.0"
   }
 }
