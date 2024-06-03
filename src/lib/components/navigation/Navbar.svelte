@@ -43,13 +43,13 @@
     <div class="collapse navbar-collapse align-items-center" id="navbarNavDropdown">
       <ul class="navbar-nav ms-auto align-items-center">
         <li class="nav-item">
-          <a class={"nav-link " + (currentpage === '/library/client/' ? " active" : "")} href="/library/client">Home</a>
+          <a class={"nav-link " + (currentpage === '/' ? " active" : "")} href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class={"nav-link " + (currentpage === '/library/client/features' ? " active" : "")} href="/library/client/features">Features</a>
+          <a class={"nav-link " + (currentpage === '/features' ? " active" : "")} href="/features">Features</a>
         </li>
         <li class="nav-item border-end-mq">
-          <a class={"nav-link" + (currentpage === '/library/client/pricing' ? " active" : "")} href="/library/client/pricing">Pricing</a>
+          <a class={"nav-link" + (currentpage === '/pricing' ? " active" : "")} href="/pricing">Pricing</a>
         </li>
         <li class="nav-item vr bg-white d-none d-sm-block mx-3"></li>
         <li class="nav-item dropdown w-100 text-center">
