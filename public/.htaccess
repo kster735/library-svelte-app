@@ -8,7 +8,7 @@
     RewriteRule . /library/index.html - [L]
 </IfModule> -->
 
-<IfModule mod_reqrite.c>
+<!-- <IfModule mod_reqrite.c>
     Options -MultiViews
     RewriteEngine On
     RewriteBase /client_express_gql
@@ -18,4 +18,14 @@
     RewriteCond %{REQUEST_FILENAME} !-l
     RewriteRule (.*)$ /library/index.html - [QSA, L]
     ErrorDocument 404 /library/index.html
+</IfModule> -->
+
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    # Don't rewrite files or directories
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+    # Rewrite everything else to index.html to allow html5 state links
+    RewriteRule ^ /library/index.html [L]
 </IfModule>
