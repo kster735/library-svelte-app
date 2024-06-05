@@ -16,7 +16,7 @@
       {#if pg === '/'}
         Home
       {:else}
-        <a href="/">Home</a>
+        <a href="#/">Home</a>
       {/if}
     </li>
 		{#each ids as id}
