@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import {activeTheme} from '../../stores/themestore';
+  import {link} from 'svelte-spa-router';
 
   $: currentpage = window.location.pathname;
 
@@ -38,13 +39,16 @@
     <div class="collapse navbar-collapse align-items-center" id="navbarNavDropdown">
       <ul class="navbar-nav ms-auto align-items-center">
         <li class="nav-item">
-          <a class={"nav-link " + (currentpage === '#/' ? " active" : "")} href="#/">Home</a>
+          <a class={"nav-link " + (currentpage === '#/' ? " active" : "")} use:link={{href:'/'}}>Home</a>
         </li>
         <li class="nav-item">
-          <a class={"nav-link " + (currentpage === '#/features' ? " active" : "")} href="#/features">Features</a>
+          <a class={"nav-link " + (currentpage === '#/books' ? " active" : "")} href="#/books">Books</a>
         </li>
         <li class="nav-item border-end-mq">
-          <a class={"nav-link" + (currentpage === '#/pricing' ? " active" : "")} href="#/pricing">Pricing</a>
+          <a class={"nav-link" + (currentpage === '#/users' ? " active" : "")} href="#/users">Users</a>
+        </li>
+         <li class="nav-item border-end-mq">
+          <a class={"nav-link" + (currentpage === '#/books/borrowing' ? " active" : "")} href="#/books/borrowing">Borrowing</a>
         </li>
         <li class="nav-item vr bg-white d-none d-sm-block mx-3"></li>
         <li class="nav-item dropdown w-100 text-center">
@@ -103,6 +107,11 @@
 		        	</button> 
             </li>
           </ul>
+        </li>
+        <li class="nav-item vr bg-white d-none d-sm-block mx-3"></li>
+        
+         <li class="nav-item border-end-mq">
+          <a class={"nav-link" + (currentpage === '#/account' ? " active" : "")} href="#/account">Account</a>
         </li>
       </ul>
     </div>

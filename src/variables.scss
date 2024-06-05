@@ -1,2 +1,115 @@
-/* Set your brand colors */
-$background: lightgrey;
+/* Variables and mixins declared here will be available in all other SCSS files */
+@import "bootstrap/scss/functions";
+/* Override Bootstrap's variables here */
+
+$font-size-base: 0.875rem;
+$spacer: 0.625rem;
+// Generate bootstrap colors from site
+// https://huemint.com/bootstrap-basic/
+
+// Theme 1
+// $white: #ffffff;
+
+// $theme-colors: (
+//     "light":      #ffd3d4,
+//     "dark":       #080000,
+//     "primary":    #3ecbf9,
+//     "secondary":  #4a36a4,
+//     "info":       #d63790,
+//     "success":    #18ad5c,
+//     "warning":    #eacc17,
+//     "danger":     #f80a20,
+// );
+
+// Theme 2
+
+// $white: #ffffff;
+
+// $light: #d5e5eb;
+// $dark: #040002;
+// $primary: #8ecad8;
+// $secondary: #1f608f;
+// $info: #b05062;
+// $success: #1cb059;
+// $warning: #edcc1b;
+// $danger: #f90d2b;
+
+// $theme-colors: (
+// 	'light': #d5e5eb,
+// 	'dark': #040002,
+// 	'primary': #8ecad8,
+// 	'secondary': #1f608f,
+// 	'info': #b05062,
+// 	'success': #1cb059,
+// 	'warning': #edcc1b,
+// 	'danger': #f90d2b
+// );
+
+// Theme pastel
+
+$white: #ffffff;
+
+$light: #edecef;
+$dark: #431b84;
+$primary: #b435e3;
+$secondary: #d97be5;
+$info: #e9dbfa;
+$success: #27c680;
+$warning: #e7d620;
+$danger: #f93410;
+
+$theme-colors: (
+  "light": $light,
+  "dark": $dark,
+  "primary": $primary,
+  "secondary": $secondary,
+  "info": $info,
+  "success": $success,
+  "warning": $warning,
+  "danger": $danger,
+);
+
+$body-bg: $light;
+$background: $light;
+
+// scss-docs-start border-radius-variables
+$border-radius: 0.625rem !default;
+$border-radius-sm: 0.5rem !default;
+$border-radius-lg: 0.25rem !default;
+$border-radius-xl: 1.5rem !default;
+$border-radius-xxl: 4rem !default;
+$border-radius-pill: 100rem !default;
+// scss-docs-end border-radius-variables
+
+// Toggler
+
+$navbar-toggler-padding-y: 0.125rem !default;
+$navbar-toggler-padding-x: 0.25rem !default;
+$navbar-toggler-font-size: 0.875 !default;
+$navbar-toggler-border-radius: $border-radius !default;
+$navbar-toggler-focus-width: 2px !default;
+$navbar-toggler-transition: box-shadow 0.25s ease-in-out;
+// $navbar-light-toggler-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-light-icon-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
+
+// $navbar-light-toggler-icon-bg: url("data:image/svg+xml,<?xml version='1.0' encoding='iso-8859-1'?><!-- License: CC0. Made by SVG Repo: https://www.svgrepo.com/svg/9365/burger --><svg fill='black' version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 243 243' xmlns:xlink='http://www.w3.org/1999/xlink'><g><path d='m7.247,184.641c4.138,34.561 44.133,37.452 84.742,37.452h59.067c36.972,0 80.01-4.245 84.684-37.348l.805-5.699h-229.968l.67,5.595z'/><rect width='243' y='123.271' height='31.667'/><path d='m235.982,93.67c-3.429-46.852-67.52-72.763-110.511-72.763h-7.942c-42.99,0-107.082,25.911-110.512,72.763l-.394,5.365h229.751l-.392-5.365zm-158.65-28.779c-7.81,7.81-22.223,6.061-22.223,6.061s-1.75-14.413 6.061-22.223c7.81-7.811 22.223-6.061 22.223-6.061s1.749,14.412-6.061,22.223zm44.168,17.609c0,0-11.429-8.954-11.429-20s11.429-20 11.429-20 11.429,8.954 11.429,20-11.429,20-11.429,20zm66.392-11.548c0,0-14.413,1.75-22.223-6.061-7.81-7.811-6.061-22.223-6.061-22.223s14.413-1.75 22.223,6.061c7.811,7.81 6.061,22.223 6.061,22.223z'/></g></svg>") !default;
+// $navbar-dark-toggler-icon-bg: url("data:image/svg+xml,<?xml version='1.0' encoding='iso-8859-1'?><!-- License: CC0. Made by SVG Repo: https://www.svgrepo.com/svg/9365/burger --><svg fill='white' version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 243 243' xmlns:xlink='http://www.w3.org/1999/xlink'><g><path d='m7.247,184.641c4.138,34.561 44.133,37.452 84.742,37.452h59.067c36.972,0 80.01-4.245 84.684-37.348l.805-5.699h-229.968l.67,5.595z'/><rect width='243' y='123.271' height='31.667'/><path d='m235.982,93.67c-3.429-46.852-67.52-72.763-110.511-72.763h-7.942c-42.99,0-107.082,25.911-110.512,72.763l-.394,5.365h229.751l-.392-5.365zm-158.65-28.779c-7.81,7.81-22.223,6.061-22.223,6.061s-1.75-14.413 6.061-22.223c7.81-7.811 22.223-6.061 22.223-6.061s1.749,14.412-6.061,22.223zm44.168,17.609c0,0-11.429-8.954-11.429-20s11.429-20 11.429-20 11.429,8.954 11.429,20-11.429,20-11.429,20zm66.392-11.548c0,0-14.413,1.75-22.223-6.061-7.81-7.811-6.061-22.223-6.061-22.223s14.413-1.75 22.223,6.061c7.811,7.81 6.061,22.223 6.061,22.223z'/></g></svg>") !default;
+
+$vr-border-width: 0.5rem;
+
+// $enable-rounded: false;
+
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+
+// Create your own map
+$custom-colors: (
+  "navbarbg": #d6bc84,
+);
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+// Merge the maps
+// $theme-colors: map-remove($theme-colors, "info", "light", "dark");
+
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
