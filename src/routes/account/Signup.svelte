@@ -1,14 +1,16 @@
 <script>
   import {page} from '../../lib/stores/pagestore';
-
-  $: $page='/books/borrowing';
-  $: title='Borrowing';
+  import SignupForm from '../../lib/components/navigation/forms/SignupForm.svelte';
+  $: $page = '/signup';
+  $: title = 'Signup';
 </script>
+
 <svelte:head>
   <title>
     {title}
   </title>
 </svelte:head>
+
 <div class="container">
-  Borrowing
+  <SignupForm />
 </div>

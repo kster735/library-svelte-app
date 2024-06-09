@@ -15,16 +15,23 @@
   import BookAdd from "./routes/books/BookAdd.svelte";
   import Account from "./routes/account/Account.svelte";
   import Breadcrumb from "./lib/components/navigation/Breadcrumb.svelte";
-  import { page } from "./lib/stores/pagestore";
+  import Login from "./routes/account/Login.svelte";
+  import Signup from "./routes/account/Signup.svelte";
+  import ErrorToast from "./lib/components/ErrorToast.svelte";
+
+
+  let id="kdkd";
 
   onMount(async () => {
     // this is enough for most components
     // @ts-ignore
-    await import("bootstrap");
+    // await import("bootstrap");
     // some components require a bootstrap instance, to fulfil their job. In that case, use this:
-    // const bootstrap = await import("bootstrap");
+    const bootstrap = await import("bootstrap");
     // sample usage:
-    // const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+    const errorToast = document.getElementById(id);
+    const toast = bootstrap.Toast.getOrCreateInstance(errorToast);
+    toast.show();
   });
 
   const routes = {
@@ -37,18 +44,26 @@
     '/users/:id': User,
     '/users/add': UserAdd,
     '/account': Account,
-  }
+    '/login': Login,
+    '/signup': Signup,
+  };
 
 </script>
-<header>
-  <Navbar></Navbar>
-</header>
+
+
+<Navbar></Navbar>
+
+
 <main class="min-vh-100">
+
+  <!-- {JSON.stringify(errorToast)} -->
+
+  <ErrorToast id={id} message={"kdkd"}/>
   <Breadcrumb />
   <Router {routes} />
 </main>
 
-<footer class="bg-dark bg-gradient p-5">
+<footer class="p-5 border-top">
   &copy; MIT Liscence 2024 iflexico
 </footer>
 <style>

@@ -3,8 +3,16 @@
   import { page } from "../../lib/stores/pagestore";
 
   $: $page = `/books/${params.id}`;
+  $: title = `One Book. ${params.id}`;
 </script>
 
+<svelte:head>
+  <title>
+    {title}
+  </title>
+</svelte:head>
 <div class="container">
-  One Book. {params.id}
+  <h1 class="display-1">
+    {title}
+  </h1>
 </div>
