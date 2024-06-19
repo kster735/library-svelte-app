@@ -1,6 +1,6 @@
 <script>
   import {page} from '../../lib/stores/pagestore';
-  import SignupForm from '../../lib/components/navigation/forms/SignupForm.svelte';
+  import SignupForm from '../../lib/components/forms/SignupForm.svelte';
   $: $page = '/signup';
   $: title = 'Signup';
 </script>

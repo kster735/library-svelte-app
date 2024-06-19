@@ -1,5 +1,5 @@
 <script>
-  import LoginForm from "../../lib/components/navigation/forms/LoginForm.svelte";
+  import LoginForm from "../../lib/components/forms/LoginForm.svelte";
   import { page } from "../../lib/stores/pagestore";
   $: $page = `/login`;
   $: title = "Login"

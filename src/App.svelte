@@ -1,10 +1,11 @@
 <script>
-  import { onMount } from "svelte";
+  import { onMount, setContext } from "svelte";
+  import {toastMessages} from './lib/stores/toastMessages';
+
   import "./app.scss";
   import Navbar from "./lib/components/navigation/Navbar.svelte";
   
   import Home from "./routes/Home.svelte";
-
   import Router from "svelte-spa-router";
   import Books from "./routes/books/Books.svelte";
   import Book from "./routes/books/Book.svelte";
@@ -20,6 +21,8 @@
   import ErrorToast from "./lib/components/ErrorToast.svelte";
 
 
+  setContext('toastMessages', toastMessages);
+
   let id="kdkd";
 
   onMount(async () => {
@@ -31,7 +34,10 @@
     // sample usage:
     const errorToast = document.getElementById(id);
     const toast = bootstrap.Toast.getOrCreateInstance(errorToast);
-    toast.show();
+
+    if (toastMessages?.error) {
+      toast.show();
+    }
   });
 
   const routes = {
@@ -58,7 +64,7 @@
 
   <!-- {JSON.stringify(errorToast)} -->
 
-  <ErrorToast id={id} message={"kdkd"}/>
+  <ErrorToast id={id} message={$toastMessages?.error?.message}/>
   <Breadcrumb />
   <Router {routes} />
 </main>
